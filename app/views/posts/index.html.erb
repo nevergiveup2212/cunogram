@@ -1,9 +1,10 @@
 <div class= "posts-wrapper">
-<%@posts.each do |post|%>
+<% @posts.each do |post|%>
 	<br/>
-	
+	<%= post.user.user_name%>
     <%= link_to (image_tag post.image.url(:med), class:'img-responsive'), post_path(post) %><br/>
     <p><%= post.caption %></td></p>
+
 	
 <%end%>	
 </div>

@@ -1,8 +1,14 @@
-<div class= "posts-wrapper">
+<div class= "form-wrapper">
 
     <%= image_tag @post.image.url(:med) %><br/>
-    <p>Caption: <%= @post.caption %></td></p>
-	<%= link_to "Back", posts_path%>
+    <p>Caption: <%= @post.caption %></p>
+    <%if @post.user == current_user%>
+    
+    	<%= link_to "Back", posts_path%>
 
-	<%= link_to "Edit post", edit_post_path%>
+		<%= link_to "Edit post", edit_post_path%>
+    <%else%>
+    	<%= link_to "Back", posts_path%>
+    <%end%>
+	
 </div>
